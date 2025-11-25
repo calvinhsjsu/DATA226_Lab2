@@ -1,0 +1,15 @@
+lab2_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      # We use env_var to read the values passed by Airflow
+      account: "{{ env_var('DBT_ACCOUNT') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      role: "{{ env_var('DBT_ROLE') }}"
+      warehouse: "{{ env_var('DBT_WAREHOUSE') }}"
+      database: "{{ env_var('DBT_DATABASE') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+      threads: 1
+      client_session_keep_alive: False

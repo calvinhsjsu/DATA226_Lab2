@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: USER_DB_PONY  
+    schema: RAW             
+    tables:
+      - name: lab2_stock_info
+        identifier: lab2_stock_info
